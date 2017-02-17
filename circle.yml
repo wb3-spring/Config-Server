@@ -1,0 +1,7 @@
+machine:
+  java:
+    version: openjdk8
+deployment:
+  dockerhub:
+    branch: master
+      - $DOCKER_HUB_TRIGGER
