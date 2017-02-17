@@ -1,0 +1,27 @@
+---
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+        git:
+          uri: https://github.com/wb3-starter/configuration # default
+          #username: abc
+          #password: abc
+          search-paths:
+            - '[folders-associated-in-repo]*'
+          repos:
+             local:
+                pattern: '*/[endpoint]'
+                uri: [alternate-git-uri] # alt
+                search-paths:
+                 - '[folders-associated-in-repo]*'
+security:
+  basic:
+    enabled: true
+  user:
+    name: billbensing
+    password: billbensing
