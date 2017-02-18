@@ -9,7 +9,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -rm=false -t $DOCKER_REPO
+    - docker build -t latest .
 
 test:
   override:
