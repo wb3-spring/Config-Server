@@ -15,9 +15,9 @@ spring:
           uri: https://github.com/wb3-spring/configuration
           search-paths:
             - '*' # Search any directory in git repo with '*'; does not limit you to specific directories
-security:
-  basic:
-    enabled: false
-  user:
-    name: billbensing
-    password: billbensing
+#security:
+#  basic:
+#    enabled: false
+#  user:
+#    name: billbensing
+#    password: billbensing
