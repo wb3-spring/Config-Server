@@ -1,3 +1,6 @@
+general:
+  artifacts:
+    - "target/wb3-configserver.jar"
 machine:
   java:
     version: openjdk8
@@ -5,4 +8,5 @@ deployment:
   dockerhub:
     branch: master
     commands:
+      - mvn package
       - $DOCKER_HUB_TRIGGER
