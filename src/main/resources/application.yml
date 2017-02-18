@@ -17,7 +17,7 @@ spring:
             - '*' # Search any directory in git repo with '*'; does not limit you to specific directories
 security:
   basic:
-    enabled: true
+    enabled: false
   user:
     name: billbensing
     password: billbensing
