@@ -1,16 +1,20 @@
 ---
+info:
+  component: WB3 - Spring Cloud Configuration Server
 server:
   port: 8080
 spring:
+  application:
+    name: wb3-configserver
   cloud:
     config:
       server:
         encrypt:
-          enabled: false
+          enabled: true
         git:
-          uri: https://github.com/wb3-starter/configuration # default
+          uri: https://github.com/wb3-spring/configuration
           search-paths:
-            - 'user*'
+            - '*' # Search any directory in git repo with '*'; does not limit you to specific directories
 security:
   basic:
     enabled: true
