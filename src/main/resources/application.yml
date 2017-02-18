@@ -2,7 +2,7 @@
 info:
   component: WB3 - Spring Cloud Configuration Server
 server:
-  port: 8080
+  port: 3000
 spring:
   application:
     name: wb3-configserver
