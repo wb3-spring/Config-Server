@@ -9,8 +9,8 @@ spring:
           enabled: false
         git:
           uri: https://github.com/wb3-starter/configuration # default
-#          search-paths:
-#            - '{application}'
+          search-paths:
+            - 'user*'
 security:
   basic:
     enabled: true
