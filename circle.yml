@@ -10,7 +10,7 @@ dependencies:
   override:
     - mvn package
     - docker info
-    - docker build -t $DOCKER_REPO.
+    - docker build -t $DOCKER_REPO .
 
 test:
   override:
