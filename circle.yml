@@ -6,20 +6,21 @@ machine:
     version: openjdk8
   services:
     - docker
-dependencies:
-  override:
-    - mvn package
-    - docker info
-    - docker build -t $DOCKER_REPO .
+# dependencies:
+#  override:
+#    - mvn package
+#    - docker info
+#    - docker build -t $DOCKER_REPO .
 
-test:
-  override:
-    - docker run -d -p 3000:8080 $DOCKER_REPO; sleep 10
-    - curl --retry 2 -- retry-delay 3 -v --user billbensing:billbensing http://localhost:3000
+#test:
+#  override:
+#    - docker run -d -p 3000:8080 $DOCKER_REPO; sleep 10
+#   - curl --retry 2 -- retry-delay 3 -v --user billbensing:billbensing http://localhost:3000
 
 deployment:
   hub:
     branch: master
     commands:
+      - docker build -t $DOCKER_REPO .
       - docker login -u $DOCKER_USER -e $DOCKER_EMAIL -p $DOCKER_PASS
       - docker push $DOCKER_REPO
