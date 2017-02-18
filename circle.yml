@@ -1,6 +1,6 @@
-#general:
-#  artifacts:
-#    - $JAVA_ARTIFACT
+general:
+  artifacts:
+    - "target/*.jar"
 
 machine:
   java:
