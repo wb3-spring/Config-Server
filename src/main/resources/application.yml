@@ -9,14 +9,8 @@ spring:
           enabled: false
         git:
           uri: https://github.com/wb3-starter/configuration # default
-          search-paths:
-            - '[folders-associated-in-repo]*'
-          #repos:
-             #local:
-                #pattern: '*/[endpoint]'
-                #uri: [alternate-git-uri] # alt
-                #search-paths:
-                 #- '[folders-associated-in-repo]*'
+#          search-paths:
+#            - '{application}'
 security:
   basic:
     enabled: true
