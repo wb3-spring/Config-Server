@@ -1,13 +1,11 @@
 general:
   artifacts:
-    - "target/*.jar"
-
+    - "target/wb3-configserver.jar"
 machine:
   java:
     version: openjdk8
   services:
     - docker
-
 deployment:
   hub:
     branch: master
