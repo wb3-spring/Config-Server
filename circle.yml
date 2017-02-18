@@ -1,12 +1,23 @@
 general:
   artifacts:
-    - "target/wb3-configserver.jar"
+    - $JAVA_ARTIFACT
 machine:
   java:
     version: openjdk8
+  services:
+    - docker
+dependencies:
+  override:
+    - docker info
+    - docker build -rm=false -t $DOCKER_REPO
+
+test:
+  override:
+    - docker run -d -p 3000:8080 $DOCKER_REPO; sleep 1
+    - curl --retry 10 -- retry-delay 5 -v http://localhost:3000
+
 deployment:
-  dockerhub:
+  hub:
     branch: master
     commands:
-      - mvn package
-      - $DOCKER_HUB_TRIGGER
+      - docker login -e $DOCKER_EMAIL -p $DOCKER_PASS
